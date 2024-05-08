@@ -59,46 +59,6 @@ def display_bmi_info(bmi):
     st.markdown("**Motivasi:**")
     st.markdown(motivation)
 
-# Menambahkan fitur pengingat
-def display_reminder():
-    st.sidebar.subheader("🗓️Pengingat untuk Aktivitas🕛")
-    date = st.sidebar.date_input("Pilih tanggal:")
-    time = st.sidebar.time_input("Pilih waktu:")
-    activity = st.sidebar.text_input("Deskripsi aktivitas:")
-    if st.sidebar.button("Set Pengingat"):
-        reminder_time = datetime.datetime.combine(date, time)
-        st.session_state['reminders'].append((reminder_time, activity))
-        st.sidebar.success(f"Pengingat untuk '{activity}' telah diatur pada {reminder_time.strftime('%Y-%m-%d %H:%M')}.")
-
-# Menampilkan saran diet berdasarkan BMI
-def display_diet_suggestions(bmi):
-    if bmi < 18.5:
-        diet = """
-        - Perbanyak konsumsi makanan tinggi kalori dan nutrisi seperti kacang-kacangan, alpukat, dan keju.
-        - Tambahkan smoothie atau milkshake yang diperkaya dengan protein.
-        - Makan lebih sering dengan porsi yang lebih kecil namun lebih sering.
-        """
-    elif 18.5 <= bmi < 25:
-        diet = """
-        - Pertahankan diet seimbang dengan banyak buah, sayuran, protein tanpa lemak, dan biji-bijian utuh.
-        - Minum air yang cukup dan batasi konsumsi gula dan makanan olahan.
-        - Pertimbangkan untuk mengatur porsi makan dan waktu makan secara teratur.
-        """
-    elif 25 <= bmi < 30:
-        diet = """
-        - Kurangi asupan kalori harian dan hindari makanan cepat saji serta makanan tinggi gula.
-        - Fokus pada makanan yang mengandung banyak serat seperti sayuran, buah, dan biji-bijian utuh.
-        - Pertimbangkan untuk meningkatkan aktivitas fisik secara bertahap.
-        """
-    else:
-        diet = """
-        - Fokus pada pengurangan asupan kalori dan konsultasi dengan ahli gizi untuk mendapatkan rencana makan yang sesuai.
-        - Batasi konsumsi makanan tinggi lemak dan gula.
-        - Tingkatkan konsumsi sayuran, buah, dan protein tanpa lemak.
-        """
-    st.write("### Saran Diet Berdasarkan BMI Anda:")
-    st.write(diet)
-
 # Pelacakan berat badan
 def display_weight_tracking():
     st.subheader("Tracking Berat Badan🏋️‍♂️")
@@ -121,6 +81,31 @@ def display_weight_tracking():
 
 # Fungsi utama
 def main():
+    st.markdown(
+        """
+        <style>
+        .stApp {
+            background-color: #D4E6C3;  /* Hijau telur asin untuk latar belakang */
+            color: #8A9A5B;             /* Hijau lumut untuk warna font */
+        }
+        .css-1d391kg {
+            color: #8A9A5B;             /* Mengatur warna teks untuk elemen tertentu menjadi hijau lumut */
+        }
+        table {
+            border: 2px solid white;    /* Garis tabel berwarna putih */
+        }
+        th {
+            background-color: white;    /* Warna latar untuk header tabel menjadi putih */
+            color: #8A9A5B;             /* Warna teks untuk header tabel tetap hijau lumut */
+        }
+        td {
+            background-color: white;    /* Warna latar untuk sel tabel menjadi putih */
+            color: #8A9A5B;             /* Warna teks untuk sel tabel tetap hijau lumut */
+        }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
     st.sidebar.header('Interactive BMI Calculator👌')
     st.sidebar.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
     
@@ -165,17 +150,11 @@ def main():
             display_bmi_info(bmi)  # Menampilkan informasi BMI termasuk saran diet dan motivasi
 
     with col2:
-        st.subheader("Saran Diet dan Motivasi")
-        if bmi > 0:  # Pastikan BMI sudah dihitung sebelum menampilkan saran diet dan motivasi
-            display_diet_suggestions(bmi)
+        pass  # Tambahkan ini jika ingin mempertahankan blok with tetapi tidak ada konten di dalamnya
 
     # Menambahkan komponen eksternal
     st.markdown("## Data Tracking")
     display_weight_tracking()
 
-    # Menambahkan fitur pengingat
-    display_reminder()
-
 if __name__ == '__main__':
     main()
-
