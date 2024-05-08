@@ -6,7 +6,7 @@ st.markdown(
     <style>
     .stApp {
         background-color: #add8e6;  /* Kode warna hex untuk biru muda */
-        color: #000000;             /* Kode warna hex untuk hitam */
+        color: #ffffff;             /* Kode warna hex untuk putih */
         font-size: 18px;            /* Ukuran font diperbesar */
     }
     .css-1d391kg {
@@ -217,4 +217,3 @@ elif selected == 'Menu Interaktif':
     st.write('- Salad sayur dengan dressing lemon')
     st.write('- Sosis sapi panggang dengan tumis sayuran')
     st.write('- Smoothie buah-buahan segar dengan yogurt rendah lemak')
-
