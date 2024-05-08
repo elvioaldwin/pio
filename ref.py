@@ -1,7 +1,6 @@
 import streamlit as st
 import datetime
 import pandas as pd
-import emoji
 
 # Mengatur tema
 st.set_page_config(layout="wide", page_title="Kalkulator BMI Canggih", page_icon=":scales:")
@@ -60,34 +59,16 @@ def display_bmi_info(bmi):
     st.markdown("**Motivasi:**")
     st.markdown(motivation)
 
-# Menambahkan fitur pengingat asupan air
-def display_water_intake_reminder():
-    st.sidebar.subheader("💧 Pengingat Asupan Air")
-    if 'daily_water_target' not in st.session_state:
-        st.session_state['daily_water_target'] = 2000  # nilai default 2000 ml per hari
-
-    daily_target = st.sidebar.number_input("Target asupan air harian (ml):", min_value=1000, max_value=5000, value=st.session_state['daily_water_target'])
-    st.session_state['daily_water_target'] = daily_target
-
-    if st.sidebar.button("Atur Pengingat Minum"):
-        st.sidebar.success(f"Pengingat untuk minum air telah diatur. Target Anda adalah {daily_target} ml per hari.")
-
-    # Menampilkan log asupan air
-    if 'water_log' not in st.session_state:
-        st.session_state['water_log'] = []
-
-    water_intake = st.sidebar.number_input("Tambahkan asupan air (ml):", min_value=100, max_value=1000, step=100)
-    if st.sidebar.button("Tambahkan Asupan"):
-        st.session_state['water_log'].append(water_intake)
-        st.sidebar.success(f"Anda telah menambahkan {water_intake} ml air.")
-
-    if st.session_state['water_log']:
-        total_intake = sum(st.session_state['water_log'])
-        st.sidebar.write(f"Total asupan air hari ini: {total_intake} ml")
-        if total_intake >= daily_target:
-            st.sidebar.success("Selamat! Anda telah mencapai target asupan air hari ini.")
-        else:
-            st.sidebar.warning(f"Anda masih perlu {daily_target - total_intake} ml lagi untuk mencapai target.")
+# Menambahkan fitur pengingat
+def display_reminder():
+    st.sidebar.subheader("🗓️Pengingat untuk Aktivitas🕛")
+    date = st.sidebar.date_input("Pilih tanggal:")
+    time = st.sidebar.time_input("Pilih waktu:")
+    activity = st.sidebar.text_input("Deskripsi aktivitas:")
+    if st.sidebar.button("Set Pengingat"):
+        reminder_time = datetime.datetime.combine(date, time)
+        st.session_state['reminders'].append((reminder_time, activity))
+        st.sidebar.success(f"Pengingat untuk '{activity}' telah diatur pada {reminder_time.strftime('%Y-%m-%d %H:%M')}.")
 
 # Menampilkan saran diet berdasarkan BMI
 def display_diet_suggestions(bmi):
@@ -142,13 +123,6 @@ def display_weight_tracking():
 def main():
     st.header('Interactive BMI Calculator👌')
     st.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
-    display_group_members()
-    about_app()
-    display_bmi_table()
-    bmi_calculator_layout()
-    external_data_tracking_features()
-
-def display_group_members():
     st.write("## Anggota Kelompok:")
     st.markdown("""
     - **Elvio Aldwin Faqih** (2320521)
@@ -157,8 +131,6 @@ def display_group_members():
     - **Pramesthi Dewi Amelia** (2320543)
     - **Raden Kayla Syawal Sabira** (2320547)
     """, unsafe_allow_html=True)
-
-def about_app():
     st.write("## Tentang Aplikasi Ini")
     st.write("""
     Aplikasi ini dirancang khusus untuk membantu Anda dengan cara yang mudah dan cepat
@@ -168,17 +140,17 @@ def about_app():
     saran olahraga yang cocok dalam bentuk tabel, serta kata-kata motivasi untuk membangun semangat Anda.
     """)
 
-def display_bmi_table():
     # Data untuk tabel BMI
     df = pd.DataFrame({
         "Kategori": ["Underweight", "Normal", "Overweight", "Obese"],
         "Min BMI": [0, 18.5, 25, 30],
         "Max BMI": [18.5, 24.99, 29.99, 60]
     })
+
+    # Menampilkan tabel BMI
     st.write("## Tabel Rentang BMI")
     st.table(df)
 
-def bmi_calculator_layout():
     # Layout dengan kolom
     col1, col2 = st.columns(2)
     with col1:
@@ -196,10 +168,12 @@ def bmi_calculator_layout():
         if bmi > 0:  # Pastikan BMI sudah dihitung sebelum menampilkan saran diet dan motivasi
             display_diet_suggestions(bmi)
 
-def external_data_tracking_features():
+    # Menambahkan komponen eksternal
     st.markdown("## Data Tracking")
     display_weight_tracking()
-    display_water_intake_reminder()
+
+    # Menambahkan fitur pengingat
+    display_reminder()
 
 if __name__ == '__main__':
     main()
