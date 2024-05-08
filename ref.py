@@ -121,25 +121,27 @@ def display_weight_tracking():
 
 # Fungsi utama
 def main():
-    st.header('Interactive BMI Calculator👌')
-    st.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
-    st.write("## Anggota Kelompok:")
-    st.markdown("""
-    - **Elvio Aldwin Faqih** (2320521)
-    - **Indana Zulfa** (2320531)
-    - **Nayla Rahma** (2320540)
-    - **Pramesthi Dewi Amelia** (2320543)
-    - **Raden Kayla Syawal Sabira** (2320547)
-    """, unsafe_allow_html=True)
-    st.write("## Tentang Aplikasi Ini")
-    st.write("""
-    Aplikasi ini dirancang khusus untuk membantu Anda dengan cara yang mudah dan cepat
-    dalam menghitung serta memahami nilai BMI (Body Mass Index) Anda. Cukup masukkan berat
-    dan tinggi badan Anda, dan biarkan aplikasi ini melakukan sisanya. Aplikasi ini tidak hanya menghitung
-    BMI Anda, tetapi juga memberikan penjelasan mendetail tentang kategori kesehatan yang sesuai dengan hasil pengukuran BMI Anda,
-    saran olahraga yang cocok dalam bentuk tabel, serta kata-kata motivasi untuk membangun semangat Anda.
-    """)
-
+    st.sidebar.header('Interactive BMI Calculator👌')
+    st.sidebar.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
+    
+    with st.sidebar.expander("Anggota Kelompok"):
+        st.markdown("""
+        - **Elvio Aldwin Faqih** (2320521)
+        - **Indana Zulfa** (2320531)
+        - **Nayla Rahma** (2320540)
+        - **Pramesthi Dewi Amelia** (2320543)
+        - **Raden Kayla Syawal Sabira** (2320547)
+        """, unsafe_allow_html=True)
+    
+    with st.sidebar.expander("Tentang Aplikasi Ini"):
+        st.write("""
+        Aplikasi ini dirancang khusus untuk membantu Anda dengan cara yang mudah dan cepat
+        dalam menghitung serta memahami nilai BMI (Body Mass Index) Anda. Cukup masukkan berat
+        dan tinggi badan Anda, dan biarkan aplikasi ini melakukan sisanya. Aplikasi ini tidak hanya menghitung
+        BMI Anda, tetapi juga memberikan penjelasan mendetail tentang kategori kesehatan yang sesuai dengan hasil pengukuran BMI Anda,
+        saran olahraga yang cocok dalam bentuk tabel, serta kata-kata motivasi untuk membangun semangat Anda.
+        """)
+    
     # Data untuk tabel BMI
     df = pd.DataFrame({
         "Kategori": ["Underweight", "Normal", "Overweight", "Obese"],
@@ -147,9 +149,8 @@ def main():
         "Max BMI": [18.5, 24.99, 29.99, 60]
     })
 
-    # Menampilkan tabel BMI
-    st.write("## Tabel Rentang BMI")
-    st.table(df)
+    with st.sidebar.expander("Tabel Rentang BMI"):
+        st.table(df)
 
     # Layout dengan kolom
     col1, col2 = st.columns(2)
