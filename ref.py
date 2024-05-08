@@ -85,22 +85,22 @@ def main():
         """
         <style>
         .stApp {
-            background-color: white;  /* Warna latar belakang menjadi putih */
-            color: #D4E6C3;          /* Warna font menjadi hijau telur asin */
+            background-color: #D4E6C3;  /* Hijau telur asin untuk latar belakang */
+            color: #8A9A5B;             /* Hijau lumut untuk warna font */
         }
         .css-1d391kg {
-            color: #D4E6C3;          /* Mengatur warna teks untuk elemen tertentu menjadi hijau telur asin */
+            color: #8A9A5B;             /* Mengatur warna teks untuk elemen tertentu menjadi hijau lumut */
         }
         table {
-            border: 2px solid #D4E6C3;    /* Garis tabel berwarna hijau telur asin */
+            border: 2px solid white;    /* Garis tabel berwarna putih */
         }
         th {
-            background-color: #D4E6C3;    /* Warna latar untuk header tabel menjadi hijau telur asin */
-            color: white;                 /* Warna teks untuk header tabel menjadi putih */
+            background-color: white;    /* Warna latar untuk header tabel menjadi putih */
+            color: #8A9A5B;             /* Warna teks untuk header tabel tetap hijau lumut */
         }
         td {
-            background-color: white;      /* Warna latar untuk sel tabel menjadi putih */
-            color: #D4E6C3;               /* Warna teks untuk sel tabel menjadi hijau telur asin */
+            background-color: white;    /* Warna latar untuk sel tabel menjadi putih */
+            color: #8A9A5B;             /* Warna teks untuk sel tabel tetap hijau lumut */
         }
         </style>
         """,
