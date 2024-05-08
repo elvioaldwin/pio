@@ -85,27 +85,26 @@ def main():
         """
         <style>
         .stApp {
-            background-color: #D4E6C3;  /* Hijau telur asin untuk latar belakang */
-            color: #8A9A5B;             /* Hijau lumut untuk warna font */
+            background-color: #f3e9df;  /* Warna latar belakang utama */
+            color: #c99548;             /* Warna teks utama */
         }
         .css-1d391kg {
-            color: #8A9A5B;             /* Mengatur warna teks untuk elemen tertentu menjadi hijau lumut */
+            color: #c99548;             /* Mengatur warna teks untuk elemen tertentu */
         }
-        table {
-            border: 2px solid white;    /* Garis tabel berwarna putih */
+        .st-bb {
+            background-color: #052659;  /* Warna latar belakang untuk sidebar */
         }
-        th {
-            background-color: white;    /* Warna latar untuk header tabel menjadi putih */
-            color: #8A9A5B;             /* Warna teks untuk header tabel tetap hijau lumut */
+        .st-at {
+            background-color: #052659;  /* Warna latar belakang untuk widget aktif */
         }
-        td {
-            background-color: white;    /* Warna latar untuk sel tabel menjadi putih */
-            color: #8A9A5B;             /* Warna teks untuk sel tabel tetap hijau lumut */
+        header {
+            background-color: #fb8e54;  /* Warna latar belakang untuk header */
         }
         </style>
         """,
         unsafe_allow_html=True
     )
+    
     st.sidebar.header('Interactive BMI Calculator👌')
     st.sidebar.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
     
