@@ -254,7 +254,7 @@ def main():
 
     with col2:
         st.subheader("Pembuat Aplikasi")
-        st.image("https://static.wikia.nocookie.net/chainsaw-man/images/d/d9/Makima_anime_design_2.png/revision/latest?cb=20220919121118", width=300)
+        st.image("https://www.greenscene.co.id/wp-content/uploads/2022/02/Makima.jpg", width=300)
         st.markdown("""
         **Nama:** Pio  
         **Umur:** Pan belas tahun  
