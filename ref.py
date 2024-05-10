@@ -22,7 +22,7 @@ def interpret_bmi(bmi):
                  ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
                 "Setiap langkah kecil adalah kemajuan. Anda lebih kuat dari yang Anda pikir!")
     elif 18.5 <= bmi < 25:
-        return ("Normal", 
+        return ("Normal👌😉", 
                 "Mari kita terus jaga semangat! Pertahankan pola makan sehat dan rutin berolahraga sebagai investasi terbaik untuk kesehatan jangka panjangmu. Ayo buat setiap hari sebagai langkah positif menuju versi terbaik dirimu!.",
                 "#2ecc71",
                 [("Berlari", "Membakar kalori dan meningkatkan kesehatan kardiovaskular"),
