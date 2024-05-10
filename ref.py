@@ -22,7 +22,7 @@ def interpret_bmi(bmi):
                  ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
                 "Setiap langkah kecil adalah kemajuan. Anda lebih kuat dari yang Anda pikir!")
     elif 18.5 <= bmi < 25:
-        return ("Normal👌😉", 
+        return ("Normal", 
                 "Mari kita terus jaga semangat! Pertahankan pola makan sehat dan rutin berolahraga sebagai investasi terbaik untuk kesehatan jangka panjangmu. Ayo buat setiap hari sebagai langkah positif menuju versi terbaik dirimu!.",
                 "#2ecc71",
                 [("Berlari", "Membakar kalori dan meningkatkan kesehatan kardiovaskular"),
@@ -84,23 +84,35 @@ def main():
     st.markdown(
         """
         <style>
-        .stApp {
-            background-color: #f3e9df;  /* Warna latar belakang utama */
-            color: #c99548;             /* Warna teks utama */
-        }
-        .css-1d391kg {
-            color: #c99548;             /* Mengatur warna teks untuk elemen tertentu */
-        }
-        .st-bb {
-            background-color: #052659;  /* Warna latar belakang untuk sidebar */
-        }
-        .st-at {
-            background-color: #052659;  /* Warna latar belakang untuk widget aktif */
-        }
-        header {
-            background-color: #fb8e54;  /* Warna latar belakang untuk header */
+        div.stApp, div.stSidebar > div:first-child {
+            background-color: #87CEEB;  /* Warna latar belakang biru muda */
+            color: #000000 !important;  /* Warna teks hitam */
         }
         </style>
+        """,
+        unsafe_allow_html=True
+    )
+    
+    st.markdown(
+        """
+        <style>
+        @keyframes rainbow {
+            0%{color: red;}
+            15%{color: orange;}
+            30%{color: yellow;}
+            45%{color: green;}
+            60%{color: blue;}
+            75%{color: indigo;}
+            90%{color: violet;}
+            100%{color: red;}
+        }
+        .rainbow-text {
+            animation: rainbow 2s infinite;
+            font-size: 40px;  /* Mengatur ukuran font */
+            font-weight: bold;  /* Membuat teks menjadi tebal */
+        }
+        </style>
+        <p class='rainbow-text'>SELAMAT DATANG DI BMI KALKULATOR CANGGIH</p>
         """,
         unsafe_allow_html=True
     )
@@ -149,7 +161,7 @@ def main():
             display_bmi_info(bmi)  # Menampilkan informasi BMI termasuk saran diet dan motivasi
 
     with col2:
-        pass  # Tambahkan ini jika ingin mempertahankan blok with tetapi tidak ada konten di dalamnya
+        pass  # Tambahkan ini jika ingin mempertahankan blok dengan tetapi tidak ada konten di dalamnya
 
     # Menambahkan komponen eksternal
     st.markdown("## Data Tracking")
