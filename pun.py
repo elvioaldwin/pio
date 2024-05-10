@@ -254,7 +254,7 @@ def main():
 
     with col2:
         st.subheader("Pembuat Aplikasi")
-        st.image("C:\\Users\\hertm\\OneDrive\\Pictures\\hp pio\\IMG_20221112_073946_903.jpg", width=300)  # Sesuaikan path dan ukuran sesuai kebutuhan
+        st.image("https://static.wikia.nocookie.net/chainsaw-man/images/d/d9/Makima_anime_design_2.png/revision/latest?cb=20220919121118", width=300)
         st.markdown("""
         **Nama:** Pio  
         **Umur:** Pan belas tahun  
