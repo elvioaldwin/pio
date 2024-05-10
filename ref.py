@@ -18,32 +18,32 @@ def interpret_bmi(bmi):
                 "Ayo, tingkatkan asupan makananmu dengan pilihan yang lebih banyak dan bernutrisi! Jadikan setiap suapan sebagai langkah cerdas menuju kesehatan yang lebih baik. Selalu ada ruang untuk lebih banyak kebaikan di piringmu!",
                 "#3498db",
                 [("Yoga", "Memperbaiki postur dan meningkatkan massa otot tanpa beban berlebih"),
-                 ("Berenang", "Melatih semua grup otot tanpa risiko cedera"),
-                 ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
+                ("Berenang", "Melatih semua grup otot tanpa risiko cedera"),
+                ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
                 "Setiap langkah kecil adalah kemajuan. Anda lebih kuat dari yang Anda pikir!")
     elif 18.5 <= bmi < 25:
         return ("Normal👌😉", 
                 "Mari kita terus jaga semangat! Pertahankan pola makan sehat dan rutin berolahraga sebagai investasi terbaik untuk kesehatan jangka panjangmu. Ayo buat setiap hari sebagai langkah positif menuju versi terbaik dirimu!.",
                 "#2ecc71",
                 [("Berlari", "Membakar kalori dan meningkatkan kesehatan kardiovaskular"),
-                 ("Berenang", "Cardio yang efektif dan rendah risiko"),
-                 ("Latihan beban", "Membangun massa otot dan memperkuat tulang")],
+                ("Berenang", "Cardio yang efektif dan rendah risiko"),
+                ("Latihan beban", "Membangun massa otot dan memperkuat tulang")],
                 "Tetaplah konsisten dan nikmati prosesnya; Anda sedang melakukan hal-hal luar biasa untuk tubuh Anda!")
     elif 25 <= bmi < 30:
         return ("Overweight🏃‍♂️🏊‍♂️", 
                 "Ayo, mulai kurangi asupan kalori dan tingkatkan aktivitas fisikmu! Setiap langkah kecil yang kamu ambil membawa dampak besar bagi kesehatan dan kesejahteraanmu. Bersama, kita bisa menjalani hidup yang lebih sehat dan penuh energi!",
                 "#f39c12",
                 [("Berjalan kaki cepat", "Cardio ringan untuk memulai dan membakar kalori"),
-                 ("Berenang", "Mengurangi beban sendi saat berolahraga"),
-                 ("Aerobik air", "Menyenangkan dan efektif untuk menurunkan berat badan")],
+                ("Berenang", "Mengurangi beban sendi saat berolahraga"),
+                ("Aerobik air", "Menyenangkan dan efektif untuk menurunkan berat badan")],
                 "Setiap langkah adalah langkah ke arah yang benar. Terus bergerak maju!")
     else:
         return ("Obese🏋️‍♂️🍴", 
                 "Mulai Hari Ini - Ingat, perjalanan seribu mil dimulai dengan satu langkah. Tak peduli seberapa kecil, langkah pertama Anda menuju kesehatan yang lebih baik adalah yang paling penting!",
                 "#e74c3c",
                 [("Berjalan kaki", "Mulai dengan sesuatu yang mudah dan bertahap"),
-                 ("Latihan kekuatan", "Membantu membakar kalori bahkan saat istirahat"),
-                 ("Streching", "Latihan interval intensitas rendah untuk memulai tanpa risiko tinggi")],
+                ("Latihan kekuatan", "Membantu membakar kalori bahkan saat istirahat"),
+                ("Streching", "Latihan interval intensitas rendah untuk memulai tanpa risiko tinggi")],
                 "Setiap hari membawa peluang baru untuk menjadi lebih baik. Jangan menyerah!")
 
 # Menampilkan informasi terkait BMI dengan detail olahraga
@@ -64,7 +64,7 @@ def display_weight_tracking():
     st.subheader("Tracking Berat Badan🏋️‍♂️")
     if 'weight_data' not in st.session_state or st.session_state['weight_data'] is None:
         st.session_state['weight_data'] = pd.DataFrame(columns=['Tanggal', 'Berat'])
-    
+        
     with st.form("weight_form"):
         date = st.date_input("Tanggal")
         weight = st.number_input("Berat Badan (kg)", min_value=0.1)
@@ -92,7 +92,7 @@ def main():
         """,
         unsafe_allow_html=True
     )
-    
+        
     st.markdown(
         """
         <style>
@@ -116,10 +116,26 @@ def main():
         """,
         unsafe_allow_html=True
     )
-    
+        
+    st.markdown(
+        """
+        <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .fade-in-text {
+            animation: fadeIn 3s;
+        }
+        </style>
+        <p class='fade-in-text'>🏃‍♂️🗓️🥩😉.</p>
+        """,
+        unsafe_allow_html=True
+    )
+        
     st.sidebar.header('Interactive BMI Calculator👌')
     st.sidebar.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
-    
+        
     with st.sidebar.expander("Anggota Kelompok"):
         st.markdown("""
         - **Elvio Aldwin Faqih** (2320521)
@@ -128,7 +144,7 @@ def main():
         - **Pramesthi Dewi Amelia** (2320543)
         - **Raden Kayla Syawal Sabira** (2320547)
         """, unsafe_allow_html=True)
-    
+        
     with st.sidebar.expander("Tentang Aplikasi Ini"):
         st.write("""
         Aplikasi ini dirancang khusus untuk membantu Anda dengan cara yang mudah dan cepat
@@ -137,7 +153,7 @@ def main():
         BMI Anda, tetapi juga memberikan penjelasan mendetail tentang kategori kesehatan yang sesuai dengan hasil pengukuran BMI Anda,
         saran olahraga yang cocok dalam bentuk tabel, serta kata-kata motivasi untuk membangun semangat Anda.
         """)
-    
+        
     # Data untuk tabel BMI
     df = pd.DataFrame({
         "Kategori": ["Underweight", "Normal", "Overweight", "Obese"],
