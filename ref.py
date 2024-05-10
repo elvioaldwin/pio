@@ -22,7 +22,7 @@ def interpret_bmi(bmi):
                 ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
                 "Setiap langkah kecil adalah kemajuan. Anda lebih kuat dari yang Anda pikir!")
     elif 18.5 <= bmi < 25:
-        return ("Normal👌😉", 
+        return ("Normal��😉", 
                 "Mari kita terus jaga semangat! Pertahankan pola makan sehat dan rutin berolahraga sebagai investasi terbaik untuk kesehatan jangka panjangmu. Ayo buat setiap hari sebagai langkah positif menuju versi terbaik dirimu!.",
                 "#2ecc71",
                 [("Berlari", "Membakar kalori dan meningkatkan kesehatan kardiovaskular"),
@@ -120,15 +120,29 @@ def main():
     st.markdown(
         """
         <style>
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-30px);}
+            60% {transform: translateY(-15px);}
         }
-        .fade-in-text {
-            animation: fadeIn 3s;
+        .bounce-text {
+            animation: bounce 2s infinite;
         }
         </style>
-        <p class='fade-in-text'>🏃‍♂️🗓️🥩😉.</p>
+        <p class='bounce-text'>🏃‍♂️🏋️‍♂️🍴🥩👌🕛!</p>
+        """,
+        unsafe_allow_html=True
+    )
+        
+    st.markdown(
+        """
+        <style>
+        button:hover {
+            background-color: #4CAF50; /* Warna latar tombol saat di-hover */
+            color: white; /* Warna teks tombol saat di-hover */
+            transform: scale(1.1); /* Membuat tombol sedikit lebih besar */
+        }
+        </style>
         """,
         unsafe_allow_html=True
     )
