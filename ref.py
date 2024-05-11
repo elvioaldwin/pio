@@ -1,6 +1,7 @@
 import streamlit as st
 import datetime
 import pandas as pd
+import emoji as s
 
 # Mengatur tema
 st.set_page_config(layout="wide", page_title="Kalkulator BMI Canggih", page_icon=":scales:")
@@ -18,32 +19,32 @@ def interpret_bmi(bmi):
                 "Ayo, tingkatkan asupan makananmu dengan pilihan yang lebih banyak dan bernutrisi! Jadikan setiap suapan sebagai langkah cerdas menuju kesehatan yang lebih baik. Selalu ada ruang untuk lebih banyak kebaikan di piringmu!",
                 "#3498db",
                 [("Yoga", "Memperbaiki postur dan meningkatkan massa otot tanpa beban berlebih"),
-                 ("Berenang", "Melatih semua grup otot tanpa risiko cedera"),
-                 ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
+                ("Berenang", "Melatih semua grup otot tanpa risiko cedera"),
+                ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
                 "Setiap langkah kecil adalah kemajuan. Anda lebih kuat dari yang Anda pikir!")
     elif 18.5 <= bmi < 25:
         return ("Normal👌😉", 
                 "Mari kita terus jaga semangat! Pertahankan pola makan sehat dan rutin berolahraga sebagai investasi terbaik untuk kesehatan jangka panjangmu. Ayo buat setiap hari sebagai langkah positif menuju versi terbaik dirimu!.",
                 "#2ecc71",
                 [("Berlari", "Membakar kalori dan meningkatkan kesehatan kardiovaskular"),
-                 ("Berenang", "Cardio yang efektif dan rendah risiko"),
-                 ("Latihan beban", "Membangun massa otot dan memperkuat tulang")],
+                ("Berenang", "Cardio yang efektif dan rendah risiko"),
+                ("Latihan beban", "Membangun massa otot dan memperkuat tulang")],
                 "Tetaplah konsisten dan nikmati prosesnya; Anda sedang melakukan hal-hal luar biasa untuk tubuh Anda!")
     elif 25 <= bmi < 30:
         return ("Overweight🏃‍♂️🏊‍♂️", 
                 "Ayo, mulai kurangi asupan kalori dan tingkatkan aktivitas fisikmu! Setiap langkah kecil yang kamu ambil membawa dampak besar bagi kesehatan dan kesejahteraanmu. Bersama, kita bisa menjalani hidup yang lebih sehat dan penuh energi!",
                 "#f39c12",
                 [("Berjalan kaki cepat", "Cardio ringan untuk memulai dan membakar kalori"),
-                 ("Berenang", "Mengurangi beban sendi saat berolahraga"),
-                 ("Aerobik air", "Menyenangkan dan efektif untuk menurunkan berat badan")],
+                ("Berenang", "Mengurangi beban sendi saat berolahraga"),
+                ("Aerobik air", "Menyenangkan dan efektif untuk menurunkan berat badan")],
                 "Setiap langkah adalah langkah ke arah yang benar. Terus bergerak maju!")
     else:
         return ("Obese🏋️‍♂️🍴", 
                 "Mulai Hari Ini - Ingat, perjalanan seribu mil dimulai dengan satu langkah. Tak peduli seberapa kecil, langkah pertama Anda menuju kesehatan yang lebih baik adalah yang paling penting!",
                 "#e74c3c",
                 [("Berjalan kaki", "Mulai dengan sesuatu yang mudah dan bertahap"),
-                 ("Latihan kekuatan", "Membantu membakar kalori bahkan saat istirahat"),
-                 ("Streching", "Latihan interval intensitas rendah untuk memulai tanpa risiko tinggi")],
+                ("Latihan kekuatan", "Membantu membakar kalori bahkan saat istirahat"),
+                ("Streching", "Latihan interval intensitas rendah untuk memulai tanpa risiko tinggi")],
                 "Setiap hari membawa peluang baru untuk menjadi lebih baik. Jangan menyerah!")
 
 # Menampilkan informasi terkait BMI dengan detail olahraga
@@ -64,7 +65,7 @@ def display_weight_tracking():
     st.subheader("Tracking Berat Badan🏋️‍♂️")
     if 'weight_data' not in st.session_state or st.session_state['weight_data'] is None:
         st.session_state['weight_data'] = pd.DataFrame(columns=['Tanggal', 'Berat'])
-    
+        
     with st.form("weight_form"):
         date = st.date_input("Tanggal")
         weight = st.number_input("Berat Badan (kg)", min_value=0.1)
@@ -81,42 +82,93 @@ def display_weight_tracking():
 
 # Fungsi utama
 def main():
+    st.image('https://media.licdn.com/dms/image/D4D12AQEN7C96fg33YQ/article-cover_image-shrink_600_2000/0/1704190425684?e=2147483647&v=beta&t=MXnUDyh8xQo_7sdrR-bGHBQZ-xIawXW19CgW4vRIdGM')
+
     st.markdown(
         """
         <style>
-        .stApp {
-            background-color: #f3e9df;  /* Warna latar belakang utama */
-            color: #c99548;             /* Warna teks utama */
-        }
-        .css-1d391kg {
-            color: #c99548;             /* Mengatur warna teks untuk elemen tertentu */
-        }
-        .st-bb {
-            background-color: #052659;  /* Warna latar belakang untuk sidebar */
-        }
-        .st-at {
-            background-color: #052659;  /* Warna latar belakang untuk widget aktif */
-        }
-        header {
-            background-color: #fb8e54;  /* Warna latar belakang untuk header */
+        div.stApp, div.stSidebar > div:first-child {
+            background-color: #87CEEB;  /* Warna latar belakang biru muda */
+            color: #000000 !important;  /* Warna teks hitam */
         }
         </style>
         """,
         unsafe_allow_html=True
     )
-    
+        
+    st.markdown(
+        """
+        <style>
+        @keyframes rainbow {
+            0%{color: red;}
+            15%{color: orange;}
+            30%{color: yellow;}
+            45%{color: green;}
+            60%{color: blue;}
+            75%{color: indigo;}
+            90%{color: violet;}
+            100%{color: red;}
+        }
+        .rainbow-text {
+            animation: rainbow 5s infinite;
+            font-size: 40px;  /* Mengatur ukuran font */
+            font-weight: bold;  /* Membuat teks menjadi tebal */
+        }
+        </style>
+        <p class='rainbow-text'>SELAMAT DATANG DI BMI KALKULATOR CANGGIH</p>
+        """,
+        unsafe_allow_html=True
+    )
+        
+    st.markdown(
+        """
+        <style>
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-30px);}
+            60% {transform: translateY(-15px);}
+        }
+        .bounce-text {
+            animation: bounce 2s infinite;
+        }
+        </style>
+        <p class='bounce-text'>🏃‍♂️🏋️‍♂️🍴🥩👌🕛!</p>
+        """,
+        unsafe_allow_html=True
+    )
+        
     st.sidebar.header('Interactive BMI Calculator👌')
     st.sidebar.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
-    
+        
     with st.sidebar.expander("Anggota Kelompok"):
-        st.markdown("""
-        - **Elvio Aldwin Faqih** (2320521)
-        - **Indana Zulfa** (2320531)
-        - **Nayla Rahma** (2320540)
-        - **Pramesthi Dewi Amelia** (2320543)
-        - **Raden Kayla Syawal Sabira** (2320547)
-        """, unsafe_allow_html=True)
-    
+        st.markdown(
+            """
+            <style>
+            @keyframes slide-in {
+                from {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            .slide-in-text {
+                animation: slide-in 1s ease-out;
+            }
+            </style>
+            <div class='slide-in-text'>
+            - **Elvio Aldwin Faqih** (2320521)<br>
+            - **Indana Zulfa** (2320531)<br>
+            - **Nayla Rahma** (2320540)<br>
+            - **Pramesthi Dewi Amelia** (2320543)<br>
+            - **Raden Kayla Syawal Sabira** (2320547)
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
+        
     with st.sidebar.expander("Tentang Aplikasi Ini"):
         st.write("""
         Aplikasi ini dirancang khusus untuk membantu Anda dengan cara yang mudah dan cepat
@@ -125,7 +177,7 @@ def main():
         BMI Anda, tetapi juga memberikan penjelasan mendetail tentang kategori kesehatan yang sesuai dengan hasil pengukuran BMI Anda,
         saran olahraga yang cocok dalam bentuk tabel, serta kata-kata motivasi untuk membangun semangat Anda.
         """)
-    
+        
     # Data untuk tabel BMI
     df = pd.DataFrame({
         "Kategori": ["Underweight", "Normal", "Overweight", "Obese"],
@@ -138,6 +190,7 @@ def main():
 
     # Layout dengan kolom
     col1, col2 = st.columns(2)
+    
     with col1:
         st.subheader("Kalkulator BMI")
         weight = st.number_input("Berat (kg)", min_value=1.0, format="%.2f")
@@ -148,9 +201,7 @@ def main():
             st.write(f"BMI Anda adalah {bmi:.2f}")
             display_bmi_info(bmi)  # Menampilkan informasi BMI termasuk saran diet dan motivasi
 
-    with col2:
-        pass  # Tambahkan ini jika ingin mempertahankan blok with tetapi tidak ada konten di dalamnya
-
+    
     # Menambahkan komponen eksternal
     st.markdown("## Data Tracking")
     display_weight_tracking()
