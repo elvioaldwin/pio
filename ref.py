@@ -1,7 +1,6 @@
 import streamlit as st
 import datetime
 import pandas as pd
-import emoji as s
 
 # Mengatur tema
 st.set_page_config(layout="wide", page_title="Kalkulator BMI Canggih", page_icon=":scales:")
@@ -82,8 +81,22 @@ def display_weight_tracking():
 
 # Fungsi utama
 def main():
-    st.image('https://media.licdn.com/dms/image/D4D12AQEN7C96fg33YQ/article-cover_image-shrink_600_2000/0/1704190425684?e=2147483647&v=beta&t=MXnUDyh8xQo_7sdrR-bGHBQZ-xIawXW19CgW4vRIdGM')
-
+    st.markdown(
+        """
+        <style>
+        @keyframes fade-in {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        .fade-in-text {
+            animation: fade-in 3s;
+        }
+        </style>
+        <p class='fade-in-text'>Selamat datang di Kalkulator BMI Canggih!</p>
+        """,
+        unsafe_allow_html=True
+    )
+        
     st.markdown(
         """
         <style>
@@ -136,6 +149,26 @@ def main():
         """,
         unsafe_allow_html=True
     )
+        
+    st.markdown(
+        """
+        <style>
+        @keyframes pulse {
+            0% {transform: scale(1);}
+            50% {transform: scale(1.1);}
+            100% {transform: scale(1);}
+        }
+        .pulse-text {
+            animation: pulse 2s infinite;
+        }
+        </style>
+        <p class='pulse-text'>Jaga Kesehatanmu dengan Kalkulator BMI!</p>
+        """,
+        unsafe_allow_html=True
+    )
+        
+    
+
         
     st.sidebar.header('Interactive BMI Calculator👌')
     st.sidebar.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
