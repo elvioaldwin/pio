@@ -81,6 +81,8 @@ def display_weight_tracking():
 
 # Fungsi utama
 def main():
+    st.image('https://media.licdn.com/dms/image/D4D12AQEN7C96fg33YQ/article-cover_image-shrink_600_2000/0/1704190425684?e=2147483647&v=beta&t=MXnUDyh8xQo_7sdrR-bGHBQZ-xIawXW19CgW4vRIdGM')
+
     st.markdown(
         """
         <style>
@@ -107,7 +109,7 @@ def main():
             100%{color: red;}
         }
         .rainbow-text {
-            animation: rainbow 2s infinite;
+            animation: rainbow 5s infinite;
             font-size: 40px;  /* Mengatur ukuran font */
             font-weight: bold;  /* Membuat teks menjadi tebal */
         }
@@ -138,13 +140,33 @@ def main():
     st.sidebar.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
         
     with st.sidebar.expander("Anggota Kelompok"):
-        st.markdown("""
-        - **Elvio Aldwin Faqih** (2320521)
-        - **Indana Zulfa** (2320531)
-        - **Nayla Rahma** (2320540)
-        - **Pramesthi Dewi Amelia** (2320543)
-        - **Raden Kayla Syawal Sabira** (2320547)
-        """, unsafe_allow_html=True)
+        st.markdown(
+            """
+            <style>
+            @keyframes slide-in {
+                from {
+                    transform: translateX(-100%);
+                    opacity: 0;
+                }
+                to {
+                    transform: translateX(0);
+                    opacity: 1;
+                }
+            }
+            .slide-in-text {
+                animation: slide-in 1s ease-out;
+            }
+            </style>
+            <div class='slide-in-text'>
+            - **Elvio Aldwin Faqih** (2320521)<br>
+            - **Indana Zulfa** (2320531)<br>
+            - **Nayla Rahma** (2320540)<br>
+            - **Pramesthi Dewi Amelia** (2320543)<br>
+            - **Raden Kayla Syawal Sabira** (2320547)
+            </div>
+            """,
+            unsafe_allow_html=True
+        )
         
     with st.sidebar.expander("Tentang Aplikasi Ini"):
         st.write("""
@@ -167,6 +189,7 @@ def main():
 
     # Layout dengan kolom
     col1, col2 = st.columns(2)
+    
     with col1:
         st.subheader("Kalkulator BMI")
         weight = st.number_input("Berat (kg)", min_value=1.0, format="%.2f")
@@ -177,9 +200,7 @@ def main():
             st.write(f"BMI Anda adalah {bmi:.2f}")
             display_bmi_info(bmi)  # Menampilkan informasi BMI termasuk saran diet dan motivasi
 
-    with col2:
-        pass  # Tambahkan ini jika ingin mempertahankan blok dengan tetapi tidak ada konten di dalamnya
-
+    
     # Menambahkan komponen eksternal
     st.markdown("## Data Tracking")
     display_weight_tracking()
