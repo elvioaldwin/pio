@@ -14,6 +14,7 @@ def calculate_bmi(weight, height):
 # kesehatan berdasarkan kategori BMI.
 def interpret_bmi(bmi):
     if bmi < 18.5:
+        st.image('https://c8.alamy.com/comp/PBAJ4W/thin-cartoon-character-boy-with-short-weight-isolated-vector-illustration-on-white-background-PBAJ4W.jpg')
         return ("Underweight🥩🍴", 
                 "Ayo, tingkatkan asupan makananmu dengan pilihan yang lebih banyak dan bernutrisi! Jadikan setiap suapan sebagai langkah cerdas menuju kesehatan yang lebih baik. Selalu ada ruang untuk lebih banyak kebaikan di piringmu!",
                 "#3498db",
@@ -22,6 +23,7 @@ def interpret_bmi(bmi):
                 ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
                 "Setiap langkah kecil adalah kemajuan. Anda lebih kuat dari yang Anda pikir!")
     elif 18.5 <= bmi < 25:
+        st.image('https://st4.depositphotos.com/26091226/38812/v/450/depositphotos_388125434-stock-illustration-pretty-young-woman-standing-scale.jpg')
         return ("Normal👌😉", 
                 "Mari kita terus jaga semangat! Pertahankan pola makan sehat dan rutin berolahraga sebagai investasi terbaik untuk kesehatan jangka panjangmu. Ayo buat setiap hari sebagai langkah positif menuju versi terbaik dirimu!.",
                 "#2ecc71",
@@ -29,7 +31,9 @@ def interpret_bmi(bmi):
                 ("Berenang", "Cardio yang efektif dan rendah risiko"),
                 ("Latihan beban", "Membangun massa otot dan memperkuat tulang")],
                 "Tetaplah konsisten dan nikmati prosesnya; Anda sedang melakukan hal-hal luar biasa untuk tubuh Anda!")
+                
     elif 25 <= bmi < 30:
+        st.image('https://i.pinimg.com/474x/f9/98/1d/f9981d8e036481408633632174ff72eb.jpg')
         return ("Overweight🏃‍♂️🏊‍♂️", 
                 "Ayo, mulai kurangi asupan kalori dan tingkatkan aktivitas fisikmu! Setiap langkah kecil yang kamu ambil membawa dampak besar bagi kesehatan dan kesejahteraanmu. Bersama, kita bisa menjalani hidup yang lebih sehat dan penuh energi!",
                 "#f39c12",
@@ -38,6 +42,7 @@ def interpret_bmi(bmi):
                 ("Aerobik air", "Menyenangkan dan efektif untuk menurunkan berat badan")],
                 "Setiap langkah adalah langkah ke arah yang benar. Terus bergerak maju!")
     else:
+        st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG31S59jJujej6UdDlw4gor4RfbYrkrWzsjBqgfFmAow&s')
         return ("Obese🏋️‍♂️🍴", 
                 "Mulai Hari Ini - Ingat, perjalanan seribu mil dimulai dengan satu langkah. Tak peduli seberapa kecil, langkah pertama Anda menuju kesehatan yang lebih baik adalah yang paling penting!",
                 "#e74c3c",
@@ -81,22 +86,6 @@ def display_weight_tracking():
 
 # Fungsi utama
 def main():
-    st.markdown(
-        """
-        <style>
-        @keyframes fade-in {
-            from {opacity: 0;}
-            to {opacity: 1;}
-        }
-        .fade-in-text {
-            animation: fade-in 3s;
-        }
-        </style>
-        <p class='fade-in-text'>Selamat datang di Kalkulator BMI Canggih!</p>
-        """,
-        unsafe_allow_html=True
-    )
-        
     st.markdown(
         """
         <style>
