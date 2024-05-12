@@ -192,14 +192,16 @@ def main():
             unsafe_allow_html=True
         )
         
-    with st.sidebar.expander("Tentang Aplikasi Ini"):
-        st.write("""
-        Aplikasi ini dirancang khusus untuk membantu Anda dengan cara yang mudah dan cepat
-        dalam menghitung serta memahami nilai BMI (Body Mass Index) Anda. Cukup masukkan berat
-        dan tinggi badan Anda, dan biarkan aplikasi ini melakukan sisanya. Aplikasi ini tidak hanya menghitung
-        BMI Anda, tetapi juga memberikan penjelasan mendetail tentang kategori kesehatan yang sesuai dengan hasil pengukuran BMI Anda,
-        saran olahraga yang cocok dalam bentuk tabel, serta kata-kata motivasi untuk membangun semangat Anda.
-        """)
+  with st.sidebar.expander("Tentang Aplikasi Ini"):
+        st.markdown("""
+        <div style="text-align: justify;">
+        <b>Aplikasi Kalkulator BMI Canggih</b> ini dirancang untuk memberikan pengalaman yang mudah, cepat, dan interaktif dalam menghitung serta memahami nilai <b>BMI (Body Mass Index)</b> Anda. Hanya dengan memasukkan berat dan tinggi badan, aplikasi ini akan mengolah data tersebut untuk memberikan hasil yang akurat.
+        <br><br>
+        Lebih dari sekedar penghitungan, aplikasi ini juga menyediakan <b>analisis mendalam</b> tentang kategori kesehatan Anda berdasarkan BMI, dilengkapi dengan <b>saran olahraga</b> yang disesuaikan dan ditampilkan dalam format tabel yang menarik. Selain itu, kami menyertakan <b>kata-kata motivasi</b> yang inspiratif untuk mendorong Anda dalam menjalani gaya hidup sehat.
+        <br><br>
+        Gunakan aplikasi ini sebagai langkah pertama Anda menuju perjalanan kesehatan yang lebih baik!
+        </div>
+        """, unsafe_allow_html=True)
         
     # Data untuk tabel BMI
     df = pd.DataFrame({
