@@ -160,7 +160,7 @@ def main():
     def show_intro_video():
         st.video("https://www.youtube.com/watch?v=NJiw11hIKKM")
 
-    st.title("Selamat Datang di Kalkulator BMI Canggih")
+    st.title("")
     show_intro_video()  # Memanggil fungsi yang menampilkan video
 
     st.sidebar.header('Interactive BMI Calculator👌')
