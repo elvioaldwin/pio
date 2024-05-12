@@ -23,7 +23,7 @@ def interpret_bmi(bmi):
                 ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
                 "Setiap langkah kecil adalah kemajuan. Anda lebih kuat dari yang Anda pikir!")
     elif 18.5 <= bmi < 25:
-        st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzt02Iyhb-k6dMNb-GGBdtdL-NsxauGumLq2KQYszGOQ&s')
+        st.image('https://img.freepik.com/free-vector/hand-drawn-strong-man-cartoon-illustration_52683-117786.jpg?size=338&ext=jpg&ga=GA1.1.1369675164.1715385600&semt=ais_user')
         return ("Normal👌😉", 
                 "Mari kita terus jaga semangat! Pertahankan pola makan sehat dan rutin berolahraga sebagai investasi terbaik untuk kesehatan jangka panjangmu. Ayo buat setiap hari sebagai langkah positif menuju versi terbaik dirimu!.",
                 "#2ecc71",
