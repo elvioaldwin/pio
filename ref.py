@@ -14,7 +14,7 @@ def calculate_bmi(weight, height):
 # kesehatan berdasarkan kategori BMI.
 def interpret_bmi(bmi):
     if bmi < 18.5:
-        st.video('url_video_underweight.mp4')
+        st.image('https://static.vecteezy.com/system/resources/previews/009/493/310/original/a-thin-red-haired-man-with-his-hands-on-his-waist-illustration-in-a-flat-cartoon-style-vector.jpg')
         return ("Underweight🥩🍴", 
                 "Ayo, tingkatkan asupan makananmu dengan pilihan yang lebih banyak dan bernutrisi! Jadikan setiap suapan sebagai langkah cerdas menuju kesehatan yang lebih baik. Selalu ada ruang untuk lebih banyak kebaikan di piringmu!",
                 "#3498db",
@@ -23,7 +23,7 @@ def interpret_bmi(bmi):
                 ("Berjalan cepat", "Meningkatkan kekuatan otot dengan risiko rendah")],
                 "Setiap langkah kecil adalah kemajuan. Anda lebih kuat dari yang Anda pikir!")
     elif 18.5 <= bmi < 25:
-        st.video('url_video_normal.mp4')
+        st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMDr9-nBAViP5rPavl-6c12K-mnPwL5rAzyHOlRPTm4g&s')
         return ("Normal👌😉", 
                 "Mari kita terus jaga semangat! Pertahankan pola makan sehat dan rutin berolahraga sebagai investasi terbaik untuk kesehatan jangka panjangmu. Ayo buat setiap hari sebagai langkah positif menuju versi terbaik dirimu!.",
                 "#2ecc71",
@@ -33,7 +33,7 @@ def interpret_bmi(bmi):
                 "Tetaplah konsisten dan nikmati prosesnya; Anda sedang melakukan hal-hal luar biasa untuk tubuh Anda!")
                 
     elif 25 <= bmi < 30:
-        st.video('url_video_overweight.mp4')
+        st.image('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzt02Iyhb-k6dMNb-GGBdtdL-NsxauGumLq2KQYszGOQ&s')
         return ("Overweight🏃‍♂️🏊‍♂️", 
                 "Ayo, mulai kurangi asupan kalori dan tingkatkan aktivitas fisikmu! Setiap langkah kecil yang kamu ambil membawa dampak besar bagi kesehatan dan kesejahteraanmu. Bersama, kita bisa menjalani hidup yang lebih sehat dan penuh energi!",
                 "#f39c12",
@@ -42,7 +42,7 @@ def interpret_bmi(bmi):
                 ("Aerobik air", "Menyenangkan dan efektif untuk menurunkan berat badan")],
                 "Setiap langkah adalah langkah ke arah yang benar. Terus bergerak maju!")
     else:
-        st.video('url_video_obese.mp4')
+        st.image('https://img.freepik.com/free-vector/overweight-man-eating-fast-food-table-isolated_1308-133546.jpg')
         return ("Obese🏋️‍♂️🍴", 
                 "Mulai Hari Ini - Ingat, perjalanan seribu mil dimulai dengan satu langkah. Tak peduli seberapa kecil, langkah pertama Anda menuju kesehatan yang lebih baik adalah yang paling penting!",
                 "#e74c3c",
