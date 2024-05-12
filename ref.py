@@ -157,9 +157,12 @@ def main():
         unsafe_allow_html=True
     )
         
-    
+    def show_intro_video():
+        st.video("https://www.youtube.com/watch?v=NJiw11hIKKM")
 
-        
+    st.title("Selamat Datang di Kalkulator BMI Canggih")
+    show_intro_video()  # Memanggil fungsi yang menampilkan video
+
     st.sidebar.header('Interactive BMI Calculator👌')
     st.sidebar.markdown("<hr style='border: 2px solid blue; border-radius: 5px;'/>", unsafe_allow_html=True)
         
