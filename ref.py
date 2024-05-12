@@ -198,7 +198,7 @@ def main():
         <div style="text-align: justify;">
         <b>Aplikasi Kalkulator BMI Canggih</b> ini dirancang untuk memberikan pengalaman yang mudah, cepat, dan interaktif dalam menghitung serta memahami nilai <b>BMI (Body Mass Index)</b> Anda. Hanya dengan memasukkan berat dan tinggi badan, aplikasi ini akan mengolah data tersebut untuk memberikan hasil yang akurat.
         <br><br>
-        Lebih dari sekedar penghitungan, aplikasi ini juga menyediakan <b>analisis mendalam</b> tentang kategori kesehatan Anda berdasarkan BMI, dilengkapi dengan <b>saran olahraga</b> yang disesuaikan dan ditampilkan dalam format tabel yang menarik. Selain itu, kami menyertakan <b>kata-kata motivasi</b> yang inspiratif untuk mendorong Anda dalam menjalani gaya hidup sehat.
+        Lebih dari sekedar penghitungan, aplikasi ini juga menyediakan <b>analisis mendalam</b> tentang kategori kesehatan Anda berdasarkan BMI, dilengkapi dengan <b>saran olahraga</b>. Selain itu, kami menyertakan <b>kata-kata motivasi</b> yang inspiratif untuk mendorong Anda dalam menjalani gaya hidup sehat.
         <br><br>
         Gunakan aplikasi ini sebagai langkah pertama Anda menuju perjalanan kesehatan yang lebih baik!
         </div>
