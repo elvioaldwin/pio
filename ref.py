@@ -182,11 +182,11 @@ def main():
             }
             </style>
             <div class='slide-in-text'>
-            - **Elvio Aldwin Faqih** (2320521)<br>
-            - **Indana Zulfa** (2320531)<br>
-            - **Nayla Rahma** (2320540)<br>
-            - **Pramesthi Dewi Amelia** (2320543)<br>
-            - **Raden Kayla Syawal Sabira** (2320547)
+            - Elvio Aldwin Faqih (2320521)<br>
+            - Indana Zulfa (2320531)<br>
+            - Nayla Rahma (2320540)<br>
+            - pramesthi Dewi Amelia (2320543)<br>
+            - Raden Kayla Syawal Sabira (2320547)
             </div>
             """,
             unsafe_allow_html=True
